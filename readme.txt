@@ -1,5 +1,5 @@
 === CT Commerce  Lite ===
-Contributors: UjW0L,sanzeeb3
+Contributors: UjW0L
 Donate link: https://www.patreon.com/ujw0l/membership
 Tags:  ecommerce, ctc-lite, 
 Requires at least: 5.5.2
