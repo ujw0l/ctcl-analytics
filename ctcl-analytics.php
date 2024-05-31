@@ -2,7 +2,7 @@
 /*
  Plugin Name:CTCL Analytics
  Plugin URI:
- Description: CT Commerce Lite ecommerce plugin
+ Description: CT Commerce Lite ecommerce plugin's analytics
  Version: 1.0.0
  Author: Ujwol Bastakoti
  Author URI:https://ujw0l.github.io/
