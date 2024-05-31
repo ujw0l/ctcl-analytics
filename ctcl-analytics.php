@@ -27,8 +27,14 @@ public function __construct() {
     add_action('admin_enqueue_scripts', function(){ wp_enqueue_style( 'ctclAnalyticsAdminCss', CTCLA_DIR_PATH.'css/analytics.css');  });
     add_filter('ctcl-info-tab-sub-tab', array($this, 'ctclSubTabHtml'),20, 1 );
     add_filter('script_loader_tag', array($this,'AddTagToScript' ) , 10, 3);
+   
 
 }
+
+
+
+
+
 
 /**
  * @since 1.0.0
@@ -87,11 +93,19 @@ public function __construct() {
 <div class="ctclAChart">
   <canvas id="myChart"></canvas>
 </div>
-
+<div class="ctcla-sales-export">
 <div class='ctclASales'>
-    <span><?php echo __('Total Sales in last 12 months ')."(".get_option('ctcl_currency')."):" ?></span>
+    <div>
+    <span><?php echo __('Total Sales in last 12 months ' ,'ctcl-analytics')."(".get_option('ctcl_currency')."):" ?></span>
     <span><?php echo number_format((float)$sales, 2, '.', ''); ?></span>
+    <div>
+    <span><?php echo __('Monthly Average','ctcl-analytics')."(".get_option('ctcl_currency')."):";?></span>
+    <span><?php echo number_format((float)($sales/12), 2, '.', ''); ?></span>
  </div>
+ <div  class = 'ctcla-export-csv' id="ctcla-export-csv" >
+    
+ <?php submit_button( __( 'Export to CSV', 'ctcl-analytics' ), 'primary','ctcla-export-csv-submit',false ); ?>
+</div>
  </fieldset>
  </div>
  </div>
@@ -115,6 +129,7 @@ public function ctclAEnequeScript(){
      wp_localize_script('ctclAnalyticsAdminJs','ctclAnalyticsObject', array(
         'sales'=>__('Total Sales (', 'ctcl-analytics').get_option('ctcl_currency').')',
         'data'=>$this->ctclaChartData(),
+        'restUrl'=>rest_url( 'custom/v1/create-csv/' )
     ));
 }
 

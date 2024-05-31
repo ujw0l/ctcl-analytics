@@ -23,3 +23,16 @@
     display:block;
 
 }
+
+.ctcla-sales-export .ctclASales,
+.ctcla-sales-export .ctcla-export-csv{
+    display:block;
+}
+.ctcla-sales-export .ctclASales{
+    font-weight: bold;
+
+}
+.ctcla-sales-export .ctcla-export-csv input{
+    float:right;
+    margin-right: 50px;
+}
