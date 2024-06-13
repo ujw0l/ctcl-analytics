@@ -214,8 +214,8 @@ else{
 		 */
 		 add_action( 'admin_notices', function(){
 			 echo '<div class="notice notice-error is-dismissible"><p>';
-			  _e( 'CTCL Analytics plugin requires CT Commerce Lite plugin installed and activated to work, please do so first.', 'ctcl-analytics' );
-			  echo '<a href="'.admin_url('plugin-install.php').'?tab=plugin-information&plugin=ctc-lite&TB_iframe=true&width=640&height=500" class="thickbox">'.__('Click Here to install it','ctcl-analytics').' </a>'; 
+             esc_html_e( 'CTCL Analytics plugin requires CT Commerce Lite plugin installed and activated to work, please do so first.', 'ctcl-analytics' );
+			 echo esc_html('<a href="'.admin_url('plugin-install.php').'?tab=plugin-information&plugin=ctc-lite&TB_iframe=true&width=640&height=500" class="thickbox">'.__('Click Here to install it','ctcl-analytics').' </a>'); 
 			 echo '</p></div>';
 		 } );
 }
