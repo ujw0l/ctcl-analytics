@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded',()=>{
  */
 
     const ctx = document.getElementById('myChart');
-   
+  
+   if(null != ctx){ 
   new Chart(ctx, {
     type: 'line',
     data: {
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     }
   });
+
 
 /**
  * 
@@ -92,6 +94,6 @@ let obj  = ctclAnalyticsObject.data.map(x=>[x[0],Number(x[1]).toFixed(2)])
 
 
 
-
+}
 
 });
