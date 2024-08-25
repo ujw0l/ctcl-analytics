@@ -3,8 +3,8 @@ Contributors: UjW0L
 Donate link: https://www.patreon.com/ujw0l/membership
 Tags:  ecommerce, ctc-lite, 
 Requires at least: 5.5.2
-Tested up to: 6.5
-Stable tag: 1.0.0
+Tested up to: 6.6
+Stable tag: 1.1.0
 Requires PHP: 7.4.9
 License: GPLv2 or later
 
