@@ -1,4 +1,4 @@
-=== CT Commerce  Lite ===
+=== CTCL Analytics ===
 Contributors: UjW0L
 Donate link: https://www.patreon.com/ujw0l/membership
 Tags:  ecommerce, ctc-lite, 
