@@ -27,6 +27,12 @@ e.g.
 4. View analytics in Info tab Analytics subtab
 
 
+= Integrations =
+
+* Addon uses Chart.js script from  https://cdn.jsdelivr.net/npm/chart.js
+
+
+
 == Frequently Asked Questions ==
 
 = Where can I view analytics of store? =
