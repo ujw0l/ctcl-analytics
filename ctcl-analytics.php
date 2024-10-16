@@ -26,7 +26,8 @@ public function __construct() {
     add_action( 'admin_enqueue_scripts', array($this,'ctclAEnequeScript' ));
     add_action('admin_enqueue_scripts', function(){ wp_enqueue_style( 'ctclAnalyticsAdminCss', CTCLA_DIR_PATH.'css/analytics.css');  });
     add_filter('ctcl-info-tab-sub-tab', array($this, 'ctclSubTabHtml'),20, 1 );
-    add_filter('script_loader_tag', array($this,'AddTagToScript' ) , 10, 3);
+   
+    
    
 
 }
@@ -84,11 +85,11 @@ public function __construct() {
     ?>
 
 <div class="ctcl-analytics-tab-main">
-<h3 class=" dashicons-before  dashicons-chart-line  ctcl-basic-info-header"><?=__("Store Analytics",'ctcl-analytics')?></h3>
+<h3 class=" dashicons-before  dashicons-chart-line  ctcl-basic-info-header"><?php echo  esc_html__ ("Store Analytics",'ctcl-analytics')?></h3>
 <div class="ctcl-analytics-tab">
 
 <fieldset>
-<legend class='dashicons-before dashicons-chart-line'><?php echo __('Chart','ctcl-analytics');?></legend>
+<legend class='dashicons-before dashicons-chart-line'><?php echo  esc_html__ ('Chart','ctcl-analytics');?></legend>
 
 <div class="ctclAChart">
   <canvas id="myChart"></canvas>
@@ -96,15 +97,15 @@ public function __construct() {
 <div class="ctcla-sales-export">
 <div class='ctclASales'>
     <div>
-    <span><?php echo __('Total Sales in last 12 months ' ,'ctcl-analytics')."(".get_option('ctcl_currency')."):" ?></span>
+    <span><?php echo  esc_html__ ('Total Sales in last 12 months ' ,'ctcl-analytics')."(".get_option('ctcl_currency')."):" ?></span>
     <span><?php echo number_format((float)$sales, 2, '.', ''); ?></span>
     <div>
-    <span><?php echo __('Monthly Average','ctcl-analytics')."(".get_option('ctcl_currency')."):";?></span>
+    <span><?php echo  esc_html__ ('Monthly Average','ctcl-analytics')."(".get_option('ctcl_currency')."):";?></span>
     <span><?php echo number_format((float)($sales/12), 2, '.', ''); ?></span>
  </div>
  <div  class = 'ctcla-export-csv' id="ctcla-export-csv" >
     
- <?php submit_button( __( 'Export to CSV', 'ctcl-analytics' ), 'primary','ctcla-export-csv-submit',false ); ?>
+ <?php submit_button(  esc_html__( 'Export to CSV', 'ctcl-analytics' ), 'primary','ctcla-export-csv-submit',false ); ?>
 </div>
  </fieldset>
  </div>
@@ -123,7 +124,7 @@ return ob_get_clean();
 
 public function ctclAEnequeScript(){
 
-    wp_enqueue_script('chartJs', 'https://cdn.jsdelivr.net/npm/chart.js',array());
+    wp_enqueue_script('chartJs', CTCLA_DIR_PATH.'js/chart.js',array());
 
     wp_enqueue_script('ctclAnalyticsAdminJs', CTCLA_DIR_PATH.'js/analytics.js',array('chartJs'));
      wp_localize_script('ctclAnalyticsAdminJs','ctclAnalyticsObject', array(
@@ -190,15 +191,6 @@ public function ctclaChartData(){
     return array_reverse( $data);
 }
 
-// Add type="module" attribute to the script
-public function AddTagToScript($tag, $handle, $src) {
-    // Check if the script is the one we want to modify
-    if ('ctclAnalyticsAdminJs' === $handle) {
-        // Add the type attribute
-        $tag = '<script type="module" src="' . esc_url($src) . '"></script>';
-    }
-    return $tag;
-}
 
 
 
