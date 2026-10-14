@@ -1,38 +1,36 @@
-.ctcl-analytics-tab fieldset{
-
-    width: 80%;
-    margin-left: auto;
-    margin-right:auto;
-    display:block;
-    padding : 10px;
-    border:1px dotted rgba(0,0,0,1);
-}
-.ctclASales{
-    margin-left:auto;
-    margin-right:auto;
-    display:block;
-    margin:10px;
-}
-.ctcl-analytics-tab fieldset legend{
-    text-align: center;
-}
-.ctclAChart{
-    width:100%;
-    margin-left: auto;
-    margin-right:auto;
-    display:block;
-
-}
-
-.ctcla-sales-export .ctclASales,
-.ctcla-sales-export .ctcla-export-csv{
-    display:block;
-}
-.ctcla-sales-export .ctclASales{
-    font-weight: bold;
-
-}
-.ctcla-sales-export .ctcla-export-csv input{
-    float:right;
-    margin-right: 50px;
+.ctcl-analytics-tab-main { max-width: 1280px; margin: 20px auto; color: #1d2327; }
+.ctcla-heading, .ctcla-toolbar, .ctcla-chart-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.ctcla-heading h2 { font-size: 24px; line-height: 1.3; margin: 0 0 8px; }
+.ctcla-heading p { color: #646970; margin: 0; }
+.ctcla-badge { background: #e8f0f7; color: #135e96; padding: 6px 12px; border-radius: 4px; font-weight: 600; }
+.ctcla-toolbar { justify-content: flex-start; margin-top: 24px; padding: 16px; border: 1px solid #dcdcde; border-radius: 6px; background: #fff; }
+.ctcla-toolbar label { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+.ctcla-toolbar .button { margin-left: auto; }
+.ctcla-period-label { color: #646970; margin: 16px 0; }
+.ctcla-metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.ctcla-card { display: flex; flex-direction: column; gap: 10px; background: #fff; border: 1px solid #dcdcde; border-radius: 6px; padding: 20px; }
+.ctcla-card > span { color: #50575e; font-weight: 600; }
+.ctcla-card strong { font-size: 23px; line-height: 1.3; overflow-wrap: anywhere; }
+.ctcla-card small { font-size: 12px; color: #646970; }
+.ctcla-card small.ctcla-positive { color: #007017; }
+.ctcla-card small.ctcla-negative { color: #b32d2e; }
+.ctcla-chart-panel, .ctcla-table-panel { background: #fff; padding: 20px; margin-top: 20px; border: 1px solid #dcdcde; border-radius: 6px; }
+.ctcla-chart-heading h3, .ctcla-table-panel h3 { font-size: 16px; margin: 0 0 16px; }
+.ctcla-chart-heading select { margin: 0 0 16px 8px; }
+.ctclAChart { position: relative; height: 300px; width: 100%; }
+#ctcla-empty, #ctcla-chart-error { background: #f0f6fc; padding: 12px; }
+.ctcla-table-scroll { overflow-x: auto; }
+.ctcla-table-panel table { border: 0; }
+.ctcla-table-panel th, .ctcla-table-panel td { padding: 10px 12px; }
+.ctcla-table-panel th:not(:first-child), .ctcla-table-panel td { text-align: right; }
+.ctcla-total-row th, .ctcla-total-row td { border-top: 2px solid #dcdcde; font-weight: 600; }
+.ctcla-note { color: #646970; font-size: 12px; line-height: 1.7; }
+@media (max-width: 1100px) { .ctcla-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) {
+    .ctcla-metrics { grid-template-columns: minmax(0, 1fr); }
+    .ctcla-toolbar { align-items: stretch; flex-direction: column; }
+    .ctcla-toolbar label { justify-content: space-between; }
+    .ctcla-toolbar .button { margin-left: 0; }
+    .ctclAChart { height: 240px; }
+    .ctcla-chart-panel, .ctcla-table-panel { padding: 12px; }
 }
